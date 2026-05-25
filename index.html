@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estrela | UI/UX Designer</title>
+    <link rel="stylesheet" href="styles.css?v=about-illustration-png-1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="主导航" data-active="home">
+        <a class="brand" href="#home" aria-label="Estrela 首页">
+          <img
+            src="assets/logo.svg"
+            data-default-src="assets/logo.svg"
+            data-about-src="assets/logo-about.svg"
+            data-services-work-src="assets/logo-services-work.svg"
+            alt="Estrela"
+          />
+        </a>
+
+        <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+        <label class="nav-button" for="nav-toggle" aria-label="打开菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="nav-links">
+          <a class="active" href="#home" data-nav-target="home">首页</a>
+          <a href="#about" data-nav-target="about">关于我</a>
+          <a href="#services" data-nav-target="services">服务</a>
+          <a href="#work" data-nav-target="work">作品</a>
+          <a href="#contact" data-nav-target="contact">联系我</a>
+          <div class="download-menu">
+            <a class="download-link" href="#download" data-nav-target="download" aria-label="下载">
+              <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a5 5 0 0 0-4.94 4.16A6 6 0 0 0 8 19h2v-2H8a4 4 0 0 1-.49-7.97l1.18-.14.17-1.17A3.15 3.15 0 0 1 12 5a3.23 3.23 0 0 1 3.18 2.66l.23 1.2 1.22.03A3.5 3.5 0 0 1 16.5 16H15v2h1.5A5.5 5.5 0 0 0 17 7a5.26 5.26 0 0 0-5-4Z" />
+                <path d="M11 11h2v8.15l2.7-2.7 1.42 1.41L12 23l-5.12-5.14 1.42-1.41 2.7 2.7V11Z" />
+              </svg>
+              下载
+            </a>
+            <div class="download-dropdown" aria-label="下载选项">
+              <a href="assets/downloads/resume-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">简历</a>
+              <a href="assets/downloads/portfolio-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">作品集</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-light" id="home">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <img class="greeting-copy" src="assets/greeting-copy.png" alt="Hello, I'm 设计师冯璐璐（Estrela）" />
+            <blockquote>
+              聚焦产品体验设计，擅长将复杂业务逻辑转化为简洁易用的交互方案与高质感视觉界面
+            </blockquote>
+            <div class="stats" aria-label="经验与项目数据">
+              <div>
+                <strong>7年<span>+</span></strong>
+                <p>UI/UX经验</p>
+              </div>
+              <div>
+                <strong>20<span>+</span></strong>
+                <p>交付项目</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <img src="assets/home-hero.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="profile section-dark" id="about">
+        <div class="content-wrap about-layout">
+          <div class="about-main">
+            <div class="module-heading compact-heading">
+              <img src="assets/title-spark.png" alt="" aria-hidden="true" />
+              <h2>关于我<span>/ABOUT ME</span></h2>
+            </div>
+
+            <h3 class="section-subtitle">个人信息</h3>
+            <div class="info-row">
+              <div class="info-item">
+                <img class="info-icon" src="assets/info-age.svg" alt="" aria-hidden="true" />
+                <span>29岁</span>
+              </div>
+              <div class="info-item">
+                <img class="info-icon" src="assets/info-work.svg" alt="" aria-hidden="true" />
+                <span>7年工作经验</span>
+              </div>
+              <div class="info-item">
+                <img class="info-icon" src="assets/info-school.svg" alt="" aria-hidden="true" />
+                <span>广东海洋大学（本科）</span>
+              </div>
+            </div>
+
+            <h3 class="section-subtitle section-title">工作经历</h3>
+            <div class="timeline">
+              <article class="experience accent">
+                <div class="experience-head">
+                  <h3>申朴信息技术有限公司</h3>
+                  <span>高级UI设计师</span>
+                  <time>2023.09~2025.11</time>
+                </div>
+                <ol>
+                  <li>负责对现有系统UI界面进行排版优化以及交互优化，从而提高交互效率；</li>
+                  <li>对新需求进行原型设计，输出高保真交互原型；</li>
+                  <li>配合开发输出相关标注以及切图，检查页面还原度。</li>
+                </ol>
+              </article>
+
+              <article class="experience lime">
+                <div class="experience-head">
+                  <h3>中软国际科技服务有限公司</h3>
+                  <span>高级UI设计师</span>
+                  <time>2021.07~2023.04</time>
+                </div>
+                <ol>
+                  <li>负责PC端的UI界面优化设计，使用户操作更趋于人性化；</li>
+                  <li>制定设计规范以及对页面进行切图标注；</li>
+                  <li>配合开发进行设计走查，促进项目落地，一比一还原设计稿。</li>
+                </ol>
+              </article>
+
+              <article class="experience pale">
+                <div class="experience-head">
+                  <h3>希创旺思电子科技有限公司</h3>
+                  <span>UI设计师</span>
+                  <time>2018.08~2021.06</time>
+                </div>
+                <ol>
+                  <li>根据客户需求独立完成APP、小程序、网页、后台等UI界面设计；</li>
+                  <li>负责公司官网的优化迭代和日常产品的图片详情设计；</li>
+                  <li>协助市场运营完成品牌VI设计、海报设计、PPT样式优化等。</li>
+                </ol>
+              </article>
+            </div>
+
+            <h3 class="section-subtitle project-title">项目经历</h3>
+            <div class="project-tags" aria-label="项目经历">
+              <div class="project-tag-row muted-row">
+                <span class="muted">OSPP内部云运维平台</span>
+                <span class="muted solid">SOP服务器运营平台</span>
+                <span class="muted solid">腾讯公益管理平台</span>
+              </div>
+              <div class="project-tag-row">
+                <span class="solid">车辆管理系统</span>
+                <span class="light">TMS管理系统</span>
+                <span class="outline">Billbook记账APP</span>
+                <span class="solid">票据管理系统</span>
+              </div>
+              <div class="project-tag-row">
+                <span class="outline">书屋访问管理系统</span>
+                <span class="solid">票盒票据APP</span>
+                <span class="light small">PDA</span>
+                <span class="outline">危险源管理系统</span>
+                <span class="light small">...</span>
+              </div>
+              <div class="project-tag-row disabled-row">
+                <span class="disabled solid">新车辆管理系统</span>
+                <span class="disabled light">货运运价自动化</span>
+                <span class="disabled outline">禁塑管理系统</span>
+                <span class="disabled solid">服务管理系统</span>
+              </div>
+            </div>
+
+            <h3 class="section-subtitle skill-title">技能介绍</h3>
+            <div class="skill-list">
+              <article class="skill-item">
+                <img src="assets/skill-design-tools.png" alt="" aria-hidden="true" />
+                <div>
+                  <h4>设计工具</h4>
+                  <p>熟练掌握 Figma、Sketch、Photoshop、Illustrator、Axure等主流设计工具，能够独立完成从需求理解、交互原型、视觉设计到高保真交付的完整设计流程。</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="assets/skill-ai-tools.png" alt="" aria-hidden="true" />
+                <div>
+                  <h4>AI工具</h4>
+                  <p>熟悉 ChatGPT、Midjourney、Stable Diffusion、即梦、Figma AI 等 AIGC 工具，能够将 AI 融入设计工作流，用于前期灵感发散、风格探索、界面方案生成、视觉素材辅助、文案优化与设计效率提升。</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="assets/skill-core.png" alt="" aria-hidden="true" />
+                <div>
+                  <h4>核心能力</h4>
+                  <p>具备产品设计、交互思维、用户体验分析、设计规范搭建、组件库维护、高保真原型输出、UI 走查与落地还原能力；能够结合业务目标与用户需求，输出兼具美观性、可用性和可实现性的设计方案。</p>
+                </div>
+              </article>
+              <article class="skill-item">
+                <img src="assets/skill-advantage.png" alt="" aria-hidden="true" />
+                <div>
+                  <h4>个人优势</h4>
+                  <p>拥有 7 年 UI/UX 设计经验，具备完整项目推进能力与组件化设计思维，能够高效协同产品、开发与运营团队推进设计落地；持续关注 AI 设计趋势，善于利用新工具提升设计效率与方案表现力。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <img class="about-figure" src="assets/about-illustration.png" alt="" aria-hidden="true" />
+        </div>
+      </section>
+
+      <section class="skills section-light" id="services">
+        <div class="content-wrap services-card">
+          <div class="module-heading services-heading">
+            <img src="assets/services-title-decoration.png" alt="" aria-hidden="true" />
+            <h2>服务<span>/SERVICES</span></h2>
+            <div class="service-tabs" aria-label="服务分类">
+              <button class="active" type="button" data-service-tab="ability">服务能力</button>
+              <button type="button" data-service-tab="scenario">业务场景</button>
+              <button type="button" data-service-tab="process">服务流程</button>
+            </div>
+          </div>
+
+          <div class="service-panels">
+            <div class="service-panel active" data-service-panel="ability">
+              <h3 class="service-question">我加入团队后，可以提供哪些能力？</h3>
+              <div class="service-grid">
+                <article class="service-visual-card">
+                  <img src="assets/service-illustration.png" alt="UI界面设计插画" />
+                  <p>根据产品定位、业务目标和用户场景，完成从页面结构、视觉风格到高保真界面的设计输出，确保界面既符合品牌调性，也具备良好的可用性和转化效率。</p>
+                </article>
+                <div class="service-stack">
+                  <article class="service-block yellow">
+                    <h4>用户体验/流程优化</h4>
+                    <p>从用户路径、任务流程和页面层级出发，发现体验断点，优化信息架构和关键操作路径，让用户更快理解产品、更顺畅完成任务。</p>
+                  </article>
+                  <div class="service-duo">
+                    <article class="service-block pale-green">
+                      <h4>设计规范组件系统</h4>
+                      <p>为产品建立统一的颜色、字体、按钮、表单、卡片、弹窗等基础规范，并沉淀可复用组件。</p>
+                    </article>
+                    <article class="service-block green-block">
+                      <h4>交付协作</h4>
+                      <p>输出清晰的页面标注、组件状态、交互说明和切图资源，协助研发准确也还原设计。</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <article class="ai-strip">
+                <div>
+                  <h4>AI 辅助提效</h4>
+                  <p>将 AI 工具融入调研、方案探索、视觉生成、文案优化、原型验证和前端协作环节，提高设计效率，同时保留设计师对业务、体验和审美的判断。</p>
+                </div>
+                <div class="tool-dots" aria-hidden="true">
+                  <img src="assets/ai-tool-1.png" alt="" />
+                  <img src="assets/ai-tool-2.png" alt="" />
+                  <img src="assets/ai-tool-3.png" alt="" />
+                </div>
+              </article>
+            </div>
+
+            <div class="service-panel" data-service-panel="scenario" hidden>
+              <h3 class="service-question">我加入团队后，可以解决哪些真实业务问题？</h3>
+              <div class="scenario-cards">
+                <article class="scenario-card green-card tilt-left">
+                  <img class="scenario-number" src="assets/scenario-01.png" alt="01" />
+                  <h4>新产品从 0 到 1</h4>
+                  <p>参与需求梳理、用户路径规划、原型设计和首版视觉搭建，帮助团队快速形成可讨论、可验证、可开发的产品方案。</p>
+                </article>
+                <article class="scenario-card dark-card tilt-right">
+                  <img class="scenario-number" src="assets/scenario-02.png" alt="02" />
+                  <h4>产品体验优化</h4>
+                  <p>通过体验走查、流程梳理和界面重构，优化页面混乱、路径过长、视觉不统一等问题。</p>
+                </article>
+                <article class="scenario-card blue-card tilt-left">
+                  <img class="scenario-number" src="assets/scenario-03.png" alt="03" />
+                  <h4>团队缺少设计规范</h4>
+                  <p>整理组件、规范和页面模板，让后续设计与开发更高效，减少重复沟通和样式偏差。</p>
+                </article>
+                <article class="scenario-card yellow-card tilt-right">
+                  <img class="scenario-number" src="assets/scenario-04.png" alt="04" />
+                  <h4>需要快速验证方案</h4>
+                  <p>结合 AI 工具快速完成调研、草图、风格探索和原型 Demo，帮助团队更快做决策。</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="service-panel" data-service-panel="process" hidden>
+              <h3 class="service-question">清晰、可协作、可落地的设计流程</h3>
+              <div class="process-list">
+                <article>
+                  <h4>需求理解</h4>
+                  <p>明确项目背景、业务目标、用户群体、核心问题和上线节奏，先判断“为什么做”和“要解决什么”。</p>
+                </article>
+                <article>
+                  <h4>信息梳理</h4>
+                  <p>梳理页面层级、用户路径和功能关系，将复杂需求整理成清晰的信息架构和操作流程。</p>
+                </article>
+                <article>
+                  <h4>原型设计</h4>
+                  <p>通过低保真或中保真原型快速验证页面逻辑和交互路径，减少直接进入视觉阶段带来的返工。</p>
+                </article>
+                <article>
+                  <h4>视觉设计</h4>
+                  <p>根据品牌调性和产品定位，建立页面视觉风格，并完成高保真 UI 设计、组件状态和关键页面表现。</p>
+                </article>
+                <article>
+                  <h4>规范交付</h4>
+                  <p>将页面中的颜色、字体、间距、组件和交互状态整理成可复用规范，提升后续迭代效率。</p>
+                </article>
+                <article>
+                  <h4>落地跟进</h4>
+                  <p>与研发沟通页面细节，配合开发还原、走查测试环境，并根据实际落地情况进行优化。</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section-green" id="work">
+        <div class="content-wrap work-layout">
+          <div class="module-heading work-heading">
+            <img src="assets/work-title-decoration.png" alt="" aria-hidden="true" />
+            <h2>精选作品<span>/SELECTED WORKS</span></h2>
+            <div class="work-tabs" aria-label="作品分类">
+              <button class="active" type="button" data-work-tab="c">C端项目</button>
+              <button type="button" data-work-tab="b">B端项目</button>
+            </div>
+          </div>
+          <div class="work-carousel active" data-work-panel="c" aria-label="C端作品轮播">
+            <div class="work-slides">
+              <img class="work-showcase active" src="assets/work-slide-1.png" alt="Billbook记账APP" data-project="billbook" />
+              <img class="work-showcase" src="assets/work-slide-2.png" alt="票盒票据APP" data-project="ticketbox" />
+              <img class="work-showcase" src="assets/work-slide-3.png" alt="书房改造小程序" data-project="bookhouse" />
+              <img class="work-overlay work-overlay-person" src="assets/work-overlay-person.png" alt="" aria-hidden="true" />
+              <img class="work-overlay work-overlay-cat" src="assets/work-overlay-cat.png" alt="" aria-hidden="true" />
+            </div>
+          </div>
+          <div class="work-carousel" data-work-panel="b" aria-label="B端作品轮播" hidden>
+            <div class="work-slides">
+              <img class="work-showcase active" src="assets/work-slide-4.png" alt="公益服务项目" data-project="public-service" />
+              <img class="work-showcase" src="assets/work-slide-5.png" alt="TMS管理项目" data-project="tms" />
+              <img class="work-showcase" src="assets/work-slide-6.png" alt="车辆管理系统" data-project="vehicle" />
+              <img class="work-overlay work-overlay-person" src="assets/work-overlay-person.png" alt="" aria-hidden="true" />
+              <img class="work-overlay work-overlay-cat" src="assets/work-overlay-cat.png" alt="" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-dark" id="contact">
+        <div class="content-wrap contact-layout">
+          <img class="contact-title" src="assets/contact-title.png" alt="Let's contact" />
+          <div class="contact-list">
+            <a href="mailto:estrela_work@163.com">
+              <img src="assets/contact-email.png" alt="" aria-hidden="true" />
+              <span>estrela_work@163.com</span>
+            </a>
+            <a href="tel:13432885616">
+              <img src="assets/contact-phone.png" alt="" aria-hidden="true" />
+              <span>13432885616</span>
+            </a>
+          </div>
+          <span class="download-anchor" id="download"></span>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="script.js?v=mobile-nav-1"></script>
+  </body>
+</html>

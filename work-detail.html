@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品详情 - Estrela</title>
+    <link rel="stylesheet" href="styles.css?v=billbook-detail-png-1" />
+  </head>
+  <body class="work-detail-page">
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="主导航" data-active="work">
+        <span class="brand" aria-label="Estrela">
+          <img src="assets/logo-services-work.svg" alt="Estrela" />
+        </span>
+
+        <div class="nav-links">
+          <a class="disabled" aria-disabled="true">首页</a>
+          <a class="disabled" aria-disabled="true">关于我</a>
+          <a class="disabled" aria-disabled="true">服务</a>
+          <a class="active" aria-current="page">作品</a>
+          <a class="disabled" aria-disabled="true">联系我</a>
+          <div class="download-menu">
+            <a class="download-link" href="#download" aria-label="下载">
+              <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a5 5 0 0 0-4.94 4.16A6 6 0 0 0 8 19h2v-2H8a4 4 0 0 1-.49-7.97l1.18-.14.17-1.17A3.15 3.15 0 0 1 12 5a3.23 3.23 0 0 1 3.18 2.66l.23 1.2 1.22.03A3.5 3.5 0 0 1 16.5 16H15v2h1.5A5.5 5.5 0 0 0 17 7a5.26 5.26 0 0 0-5-4Z" />
+                <path d="M11 11h2v8.15l2.7-2.7 1.42 1.41L12 23l-5.12-5.14 1.42-1.41 2.7 2.7V11Z" />
+              </svg>
+              下载
+            </a>
+            <div class="download-dropdown" aria-label="下载选项">
+              <a href="assets/downloads/resume-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">简历</a>
+              <a href="assets/downloads/portfolio-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">作品集</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <button class="detail-back" type="button" data-back>← 返回上一页</button>
+
+    <main class="work-detail-shell">
+      <aside class="detail-side" aria-label="作品导航">
+        <h2 class="detail-side-title">Selected Works</h2>
+        <nav class="detail-nav" data-detail-nav></nav>
+      </aside>
+
+      <section class="detail-main">
+        <header class="detail-hero" data-detail-hero>
+          <p class="detail-kicker" data-detail-type>C端项目</p>
+          <h1 data-detail-title>Billbook记账APP</h1>
+          <p data-detail-summary>作品详情页框架已搭建，可继续补充项目背景、设计过程、关键页面和成果复盘。</p>
+        </header>
+
+        <div data-detail-content>
+          <section class="detail-section">
+            <h2>项目概览</h2>
+            <div class="detail-placeholder">这里放项目概览、角色、周期、目标和交付内容</div>
+          </section>
+
+          <section class="detail-section">
+            <h2>设计过程</h2>
+            <div class="detail-placeholder">这里放需求分析、信息架构、原型、视觉规范和迭代过程</div>
+          </section>
+
+          <section class="detail-section">
+            <h2>页面展示</h2>
+            <div class="detail-placeholder">这里放高保真页面、动效演示或长图内容</div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const groups = [
+        {
+          name: "C端产品",
+          projects: [
+            { id: "billbook", name: "Billbook记账APP", type: "C端项目", image: "assets/billbook-detail.png" },
+            {
+              id: "ticketbox",
+              name: "票盒票据APP",
+              type: "C端项目",
+              images: ["assets/ticketbox-detail-1.png", "assets/ticketbox-detail-2.png"],
+            },
+            { id: "bookhouse", name: "书房改造小程序", type: "C端项目", image: "assets/bookhouse-detail.png" },
+          ],
+        },
+        {
+          name: "B端产品",
+          projects: [
+            { id: "public-service", name: "公益服务项目", type: "B端项目", image: "assets/public-service-detail.png" },
+            { id: "tms", name: "TMS管理项目", type: "B端项目", image: "assets/tms-detail.png" },
+            { id: "vehicle", name: "车辆管理系统", type: "B端项目", image: "assets/vehicle-detail.png" },
+          ],
+        },
+      ];
+      const projects = groups.flatMap((group) => group.projects);
+
+      const params = new URLSearchParams(window.location.search);
+      const nav = document.querySelector("[data-detail-nav]");
+      const hero = document.querySelector("[data-detail-hero]");
+      const content = document.querySelector("[data-detail-content]");
+      const defaultContent = content.innerHTML;
+      let renderVersion = 0;
+
+      function preloadImage(src) {
+        return new Promise((resolve) => {
+          const image = new Image();
+          image.onload = resolve;
+          image.onerror = resolve;
+          image.src = src;
+        });
+      }
+
+      groups.forEach((group) => {
+        const section = document.createElement("section");
+        section.className = "detail-nav-group";
+
+        const heading = document.createElement("h3");
+        heading.textContent = group.name;
+        section.appendChild(heading);
+
+        group.projects.forEach((project) => {
+          const link = document.createElement("a");
+          link.href = `work-detail.html?project=${project.id}`;
+          link.dataset.projectId = project.id;
+          link.textContent = project.name;
+          section.appendChild(link);
+        });
+
+        nav.appendChild(section);
+      });
+
+      async function renderProject(projectId, shouldPushState = false) {
+        renderVersion += 1;
+        const currentRender = renderVersion;
+        const activeProject = projects.find((project) => project.id === projectId) || projects[0];
+        nav.querySelectorAll("[data-project-id]").forEach((link) => {
+          link.classList.toggle("active", link.dataset.projectId === activeProject.id);
+        });
+
+        document.querySelector("[data-detail-title]").textContent = activeProject.name;
+        document.querySelector("[data-detail-type]").textContent = activeProject.type;
+        document.querySelector("[data-detail-summary]").textContent =
+          `${activeProject.name} 的详情页框架已搭建，可继续补充项目背景、设计过程、关键页面和成果复盘。`;
+
+        const detailImages = activeProject.images || (activeProject.image ? [activeProject.image] : []);
+        if (detailImages.length) {
+          await Promise.all(detailImages.map(preloadImage));
+          if (currentRender !== renderVersion) return;
+          hero.hidden = true;
+          content.innerHTML = detailImages
+            .map((image, index) => `<img class="detail-full-image" src="${image}" alt="${activeProject.name} 详情内容 ${index + 1}" />`)
+            .join("");
+        } else {
+          hero.hidden = false;
+          content.innerHTML = defaultContent;
+        }
+
+        document.title = `${activeProject.name} - 作品详情`;
+
+        if (shouldPushState) {
+          const nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.set("project", activeProject.id);
+          window.history.pushState({ project: activeProject.id }, "", nextUrl);
+        }
+      }
+
+      nav.addEventListener("click", (event) => {
+        const link = event.target.closest("[data-project-id]");
+        if (!link) return;
+        event.preventDefault();
+        renderProject(link.dataset.projectId, true);
+      });
+
+      window.addEventListener("popstate", () => {
+        const nextParams = new URLSearchParams(window.location.search);
+        renderProject(nextParams.get("project") || "billbook");
+      });
+
+      renderProject(params.get("project") || "billbook");
+
+      document.querySelector("[data-back]").addEventListener("click", () => {
+        window.location.href = "index.html?target=work#work";
+      });
+    </script>
+  </body>
+</html>
