@@ -12,6 +12,19 @@ const observedSections = ["home", "about", "services", "work", "contact"]
   .filter(Boolean);
 let lockedNavTarget = "";
 let unlockTimer = 0;
+
+function finishPageLoading() {
+  window.setTimeout(() => {
+    document.body.classList.remove("is-loading");
+  }, 320);
+}
+
+if (document.readyState === "complete") {
+  finishPageLoading();
+} else {
+  window.addEventListener("load", finishPageLoading, { once: true });
+}
+
 const fixedScrollTargets = {
   home: 0,
   about: 1080,
@@ -289,7 +302,7 @@ workShowcases.forEach((showcase) => {
   showcase.tabIndex = showcase.classList.contains("active") ? 0 : -1;
   showcase.role = "link";
   showcase.addEventListener("click", () => {
-    window.location.href = `/website_resume/work-detail.html?project=${showcase.dataset.project}`;
+    window.location.href = `work-detail.html?project=${showcase.dataset.project}`;
   });
   showcase.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {

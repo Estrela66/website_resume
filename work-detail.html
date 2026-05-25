@@ -4,21 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>作品详情 - Estrela</title>
-    <link rel="stylesheet" href="/website_resume/styles.css?v=billbook-detail-png-1" />
+    <link rel="stylesheet" href="styles.css?v=loader-cleanup-1" />
   </head>
-  <body class="work-detail-page">
+  <body class="work-detail-page is-loading">
+    <div class="page-loader" data-page-loader aria-hidden="true">
+      <div class="loader-shell">
+        <div class="loader-nav"></div>
+        <div class="loader-grid">
+          <div class="loader-copy">
+            <div class="loader-line short"></div>
+            <div class="loader-line long"></div>
+            <div class="loader-line medium"></div>
+            <div class="loader-cards">
+              <div class="loader-card"></div>
+              <div class="loader-card"></div>
+            </div>
+          </div>
+          <div class="loader-visual"></div>
+        </div>
+      </div>
+    </div>
     <header class="site-header">
       <nav class="nav-shell" aria-label="主导航" data-active="work">
         <span class="brand" aria-label="Estrela">
-          <img src="/website_resume/logo-services-work.svg" alt="Estrela" />
+          <img src="assets/logo-services-work.svg" alt="Estrela" />
         </span>
 
         <div class="nav-links">
-          <a class="disabled" aria-disabled="true">首页</a>
-          <a class="disabled" aria-disabled="true">关于我</a>
-          <a class="disabled" aria-disabled="true">服务</a>
-          <a class="active" aria-current="page">作品</a>
-          <a class="disabled" aria-disabled="true">联系我</a>
+          <a href="index.html?target=home#home">首页</a>
+          <a href="index.html?target=about#about">关于我</a>
+          <a href="index.html?target=services#services">服务</a>
+          <a class="active" href="index.html?target=work#work" aria-current="page">作品</a>
+          <a href="index.html?target=contact#contact">联系我</a>
           <div class="download-menu">
             <a class="download-link" href="#download" aria-label="下载">
               <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -28,8 +45,8 @@
               下载
             </a>
             <div class="download-dropdown" aria-label="下载选项">
-              <a href="/website_resume/downloads/resume-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">简历</a>
-              <a href="/website_resume/downloads/portfolio-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">作品集</a>
+              <a href="assets/downloads/resume-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">简历</a>
+              <a href="assets/downloads/portfolio-ui-fenglulu-7y.pdf" target="_blank" rel="noopener">作品集</a>
             </div>
           </div>
         </div>
@@ -71,26 +88,38 @@
     </main>
 
     <script>
+      function finishPageLoading() {
+        window.setTimeout(() => {
+          document.body.classList.remove("is-loading");
+        }, 320);
+      }
+
+      if (document.readyState === "complete") {
+        finishPageLoading();
+      } else {
+        window.addEventListener("load", finishPageLoading, { once: true });
+      }
+
       const groups = [
         {
           name: "C端产品",
           projects: [
-            { id: "billbook", name: "Billbook记账APP", type: "C端项目", image: "/website_resume/billbook-detail.png" },
+            { id: "billbook", name: "Billbook记账APP", type: "C端项目", image: "assets/billbook-detail.png" },
             {
               id: "ticketbox",
               name: "票盒票据APP",
               type: "C端项目",
-              images: ["/website_resume/ticketbox-detail-1.png", "/website_resume/ticketbox-detail-2.png"],
+              images: ["assets/ticketbox-detail-1.png", "assets/ticketbox-detail-2.png"],
             },
-            { id: "bookhouse", name: "书房改造小程序", type: "C端项目", image: "/website_resume/bookhouse-detail.png" },
+            { id: "bookhouse", name: "书房改造小程序", type: "C端项目", image: "assets/bookhouse-detail.png" },
           ],
         },
         {
           name: "B端产品",
           projects: [
-            { id: "public-service", name: "公益服务项目", type: "B端项目", image: "/website_resume/public-service-detail.png" },
-            { id: "tms", name: "TMS管理项目", type: "B端项目", image: "/website_resume/tms-detail.png" },
-            { id: "vehicle", name: "车辆管理系统", type: "B端项目", image: "/website_resume/vehicle-detail.png" },
+            { id: "public-service", name: "公益服务项目", type: "B端项目", image: "assets/public-service-detail.png" },
+            { id: "tms", name: "TMS管理项目", type: "B端项目", image: "assets/tms-detail.png" },
+            { id: "vehicle", name: "车辆管理系统", type: "B端项目", image: "assets/vehicle-detail.png" },
           ],
         },
       ];
@@ -122,7 +151,7 @@
 
         group.projects.forEach((project) => {
           const link = document.createElement("a");
-          link.href = `/website_resume/work-detail.html?project=${project.id}`;
+          link.href = `work-detail.html?project=${project.id}`;
           link.dataset.projectId = project.id;
           link.textContent = project.name;
           section.appendChild(link);
@@ -181,7 +210,7 @@
       renderProject(params.get("project") || "billbook");
 
       document.querySelector("[data-back]").addEventListener("click", () => {
-        window.location.href = "/website_resume/index.html?target=work#work";
+        window.location.href = "index.html?target=work#work";
       });
     </script>
   </body>
