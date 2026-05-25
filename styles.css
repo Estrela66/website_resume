@@ -1303,7 +1303,7 @@ h2 {
   z-index: 1;
   content: "";
   pointer-events: none;
-  background: url("assets/services-overlay.png") center / cover no-repeat;
+  background: url("/website_resume/assets/services-overlay.png") center / cover no-repeat;
   mix-blend-mode: multiply;
 }
 

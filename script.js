@@ -289,7 +289,7 @@ workShowcases.forEach((showcase) => {
   showcase.tabIndex = showcase.classList.contains("active") ? 0 : -1;
   showcase.role = "link";
   showcase.addEventListener("click", () => {
-    window.location.href = `work-detail.html?project=${showcase.dataset.project}`;
+    window.location.href = `/website_resume/work-detail.html?project=${showcase.dataset.project}`;
   });
   showcase.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
